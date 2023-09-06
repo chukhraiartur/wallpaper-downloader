@@ -25,7 +25,7 @@ Follow these steps to set up the project and run it locally:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/wallpaper-downloader.git
+git clone git@github.com:chukhraiartur/wallpaper-downloader.git
 ```
 
 2. Navigate to the project directory:
