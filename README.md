@@ -2,6 +2,10 @@
 
 Welcome to Wallpaper Downloader! This is a Django web application that allows you to download wallpapers from Unsplash.
 
+## Demo
+
+![wallpaper-downloader-demo](https://github.com/chukhraiartur/wallpaper-downloader/assets/81998012/0fbe5cab-96fa-4f87-a490-75a5af1fc411)
+
 ## Getting Started
 
 Follow these steps to set up the project and run it locally:
@@ -53,6 +57,7 @@ Replace `your-access-key-goes-here` with the Access Key you obtained from Unspla
 1. Build and start the Docker containers using Docker Compose:
 
 ```bash
+sudo service docker start
 sudo docker-compose up --build
 ```
 
