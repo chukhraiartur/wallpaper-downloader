@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .wallpaper-block {
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый цвет */
+            border-radius: 15px; /* Закругление углов */
+            padding: 20px; /* Внутренний отступ для блока */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень */
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <div class="wallpaper-block">
+                <h1 class="mb-3">Wallpaper Downloader</h1>
+                <form method="post" action="{% url 'home' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="mb-3">
+                                <select class="form-control" id="orientation_type" name="orientation_type">
+                                    <option value="landscape">Desktop</option>
+                                    <option value="portrait">Mobile</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-primary btn-block">Download</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // JavaScript code to save and retrieve user's choice
+    document.addEventListener("DOMContentLoaded", function () {
+        const orientationTypeSelect = document.getElementById("orientation_type");
+    
+        // Check if there is a stored choice in local storage
+        const storedOrientationType = localStorage.getItem("orientation_type");
+        if (storedOrientationType) {
+            orientationTypeSelect.value = storedOrientationType;
+        }
+    
+        // Add an event listener to save the user's choice when they change it
+        orientationTypeSelect.addEventListener("change", function () {
+            const selectedValue = orientationTypeSelect.value;
+            localStorage.setItem("orientation_type", selectedValue);
+        });
+    });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis
+    restart: always
+
+  webapp:
+    restart: always
+    build:
+      context: ./wallpaper_downloader
+    ports:
+      - "8000:8000"
+    command: [ "python3", "./wallpaper_downloader/manage.py", "runserver", "0.0.0.0:8000" ]
+
+  worker:
+    restart: always
+    build:
+      context: ./wallpaper_downloader
+    volumes:
+      - ./images:/app/wallpaper_downloader/images # Use a bind mount to keep the "images" folder in the same location
+    command: [ "celery", "--workdir=./wallpaper_downloader", "-A", "wallpaper_downloader", "worker" ]
