@@ -21,7 +21,6 @@ Follow these steps to set up the project and run it locally:
 2. Create an account or log in if you already have one.
 3. Once logged in, go to the [Applications](https://unsplash.com/oauth/applications) page.
 4. Click on the "New Application" button to create a new application.
-5. Fill out the required fields, and when asked for a **Redirect URI**, you can use `http://localhost:8000/complete/unsplash/` for local development.
 6. After creating the application, you will see your **Access Key**. Copy it; you'll need it later.
 
 ### Setting Up Your Environment
