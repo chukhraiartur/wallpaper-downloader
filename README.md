@@ -1,6 +1,6 @@
 # Wallpaper Downloader
 
-Welcome to Wallpaper Downloader! This is a Django web application that allows you to download wallpapers from Unsplash.
+The **Wallpaper Downloader** is a Django web application that allows users to download random wallpapers from Unsplash. This application utilizes the power of Celery for task management and Redis as a message broker to efficiently generate and download wallpapers. Users have the flexibility to choose between desktop and mobile wallpapers according to their preferences.
 
 ## Demo
 
